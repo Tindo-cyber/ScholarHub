@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:scholarhub}
+    username: ${DB_USER:scholarhub}
+    password: ${DB_PASSWORD:scholarhub_dev}
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    com.scholarhub: DEBUG
