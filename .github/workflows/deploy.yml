@@ -37,7 +37,7 @@ jobs:
           VITE_USE_MOCK: true
           VITE_APP_NAME: InnovateX
           VITE_APP_TAGLINE: Build. Innovate. Launch.
-          VITE_APP_URL: https://www.scholarhub.com
+          VITE_APP_URL: https://www.innovatex.com
 
       - name: SPA fallback for GitHub Pages
         run: cp dist/index.html dist/404.html
