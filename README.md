@@ -4,8 +4,6 @@
 
 An AI-powered Digital Innovation Ecosystem that supports students from idea to startup — replacing GitHub Classroom, Moodle submissions, university repositories, and student portfolios.
 
-> **Note:** The GitHub repository is named `ScholarHub` for historical reasons. The product brand is **InnovateX**.
-
 ## Architecture
 
 ```
