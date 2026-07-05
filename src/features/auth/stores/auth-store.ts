@@ -80,7 +80,17 @@ export const useAuthStore = create<AuthState>()(
       register: async (data) => {
         set({ isLoading: true })
         try {
-          const auth = await authApi.register(data)
+          if (import.meta.env.VITE_USE_MOCK !== 'false') {
+            throw new Error('Registration requires API — set VITE_USE_MOCK=false')
+          }
+          const auth = await authApi.register({
+            email: data.email,
+            password: data.password,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            university: data.university,
+            program: data.program,
+          })
           setTokens(auth)
           set({
             token: auth.accessToken,

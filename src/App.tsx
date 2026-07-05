@@ -13,6 +13,7 @@ const AIWorkspacePage = lazy(() => import('@/pages/ai-workspace-page'))
 const NotificationsPage = lazy(() => import('@/pages/notifications-page'))
 const SettingsPage = lazy(() => import('@/pages/settings-page'))
 const LoginPage = lazy(() => import('@/features/auth/pages/login-page'))
+const RegisterPage = lazy(() => import('@/features/auth/pages/register-page'))
 const MarketplacePage = lazy(() => import('@/features/marketplace/pages/marketplace-page'))
 const StartupPage = lazy(() => import('@/features/startup/pages/startup-page'))
 const SupervisorPage = lazy(() => import('@/features/supervisor/pages/supervisor-page'))
@@ -43,6 +44,7 @@ export default function App() {
           <Routes>
             <Route element={<GuestRoute />}>
               <Route path="/auth/login" element={<Lazy><LoginPage /></Lazy>} />
+              <Route path="/auth/register" element={<Lazy><RegisterPage /></Lazy>} />
             </Route>
 
             <Route element={<ProtectedRoute />}>

@@ -1,37 +1,50 @@
 package com.scholarhub.repository;
 
 import com.scholarhub.domain.entity.Project;
-import com.scholarhub.domain.enums.ProjectPhase;
-import com.scholarhub.domain.enums.ProjectStatus;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.scholarhub.domain.enums.ProjectPhase;
+import com.scholarhub.domain.enums.ProjectStatus;
+
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, UUID> {
 
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
+    @Query("SELECT p FROM Project p")
+    List<Project> findAllWithDetails();
+
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
+    @Query("SELECT p FROM Project p WHERE p.id = :id")
+    Optional<Project> findByIdWithDetails(@Param("id") UUID id);
+
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
     List<Project> findByStudentId(UUID studentId);
 
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
     List<Project> findBySupervisorId(UUID supervisorId);
 
-    List<Project> findByStatus(ProjectStatus status);
-
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
     List<Project> findByIsPublicTrue();
 
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
     @Query("SELECT p FROM Project p WHERE p.student.id = :studentId AND p.status = :status")
     List<Project> findByStudentIdAndStatus(@Param("studentId") UUID studentId, @Param("status") ProjectStatus status);
 
+    @EntityGraph(attributePaths = {"student", "supervisor", "health"})
     @Query("""
         SELECT p FROM Project p
         WHERE LOWER(p.title) LIKE LOWER(CONCAT('%', :query, '%'))
            OR LOWER(p.description) LIKE LOWER(CONCAT('%', :query, '%'))
-           OR :tech MEMBER OF p.technologies
         """)
-    List<Project> searchProjects(@Param("query") String query, @Param("tech") String tech);
+    List<Project> searchByText(@Param("query") String query);
 
     @Query("""
         SELECT p FROM Project p
@@ -46,4 +59,6 @@ public interface ProjectRepository extends JpaRepository<Project, UUID> {
     );
 
     long countByStudentId(UUID studentId);
+
+    long countByStudentIdAndStatus(UUID studentId, ProjectStatus status);
 }

@@ -19,7 +19,7 @@ public class ProjectService {
     private final ProjectRepository projectRepository;
 
     public List<ProjectDto> getAllProjects() {
-        return projectRepository.findAll().stream().map(ProjectDto::from).toList();
+        return projectRepository.findAllWithDetails().stream().map(ProjectDto::from).toList();
     }
 
     public List<ProjectDto> getProjectsByStudent(UUID studentId) {
@@ -31,13 +31,13 @@ public class ProjectService {
     }
 
     public ProjectDto getProject(UUID id) {
-        Project project = projectRepository.findById(id)
+        Project project = projectRepository.findByIdWithDetails(id)
                 .orElseThrow(() -> new IllegalArgumentException("Project not found"));
         return ProjectDto.from(project);
     }
 
     public List<ProjectDto> searchProjects(String query) {
-        return projectRepository.searchProjects(query, query).stream().map(ProjectDto::from).toList();
+        return projectRepository.searchByText(query).stream().map(ProjectDto::from).toList();
     }
 
     public List<ProjectDto> getPublicProjects() {

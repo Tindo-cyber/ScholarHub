@@ -6,8 +6,6 @@ import com.scholarhub.service.ProjectService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,12 +25,6 @@ public class ProjectController {
         return ApiResponse.ok(projectService.getAllProjects());
     }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "Get project by ID")
-    public ApiResponse<ProjectDto> getById(@PathVariable UUID id) {
-        return ApiResponse.ok(projectService.getProject(id));
-    }
-
     @GetMapping("/search")
     @Operation(summary = "Search projects")
     public ApiResponse<List<ProjectDto>> search(@RequestParam String q) {
@@ -43,5 +35,11 @@ public class ProjectController {
     @Operation(summary = "List public marketplace projects")
     public ApiResponse<List<ProjectDto>> getPublic() {
         return ApiResponse.ok(projectService.getPublicProjects());
+    }
+
+    @GetMapping("/{id}")
+    @Operation(summary = "Get project by ID")
+    public ApiResponse<ProjectDto> getById(@PathVariable UUID id) {
+        return ApiResponse.ok(projectService.getProject(id));
     }
 }

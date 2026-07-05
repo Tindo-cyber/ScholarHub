@@ -69,6 +69,13 @@ docker-compose up -d
 - PostgreSQL: localhost:5432
 - MinIO Console: http://localhost:9001
 
+### Backend (local, requires Java 21)
+```bash
+cd backend
+mvn spring-boot:run
+```
+> **Note:** Java 21 is required. Java 25 is not yet compatible with Lombok. Install [Temurin 21](https://adoptium.net/) and set `JAVA_HOME` before building.
+
 Set `VITE_USE_MOCK=false` in `.env` to connect frontend to the live API.
 
 ## Modules
@@ -97,6 +104,8 @@ Set `VITE_USE_MOCK=false` in `.env` to connect frontend to the live API.
 | GET | `/api/v1/projects` | List projects |
 | GET | `/api/v1/projects/{id}` | Project details |
 | GET | `/api/v1/projects/search?q=` | Search projects |
+| GET | `/api/v1/notifications` | User notifications |
+| GET | `/api/v1/portfolio` | User portfolio |
 | POST | `/api/v1/ai/chat` | Scholar AI mentor |
 
 ## User Roles

@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from '@tanstack/react-query'
-import { projectsApi, workspaceApi, aiApi } from '@/lib/api'
+import { projectsApi, workspaceApi, aiApi, notificationsApi, portfolioApi } from '@/lib/api'
 import {
   projects as mockProjects,
   currentUser,
@@ -96,6 +96,7 @@ export function useNotifications() {
   return useQuery({
     queryKey: ['notifications'],
     queryFn: async () => {
+      if (!USE_MOCK) return notificationsApi.getAll()
       await delay(200)
       return notifications
     },
@@ -106,6 +107,10 @@ export function usePortfolio() {
   return useQuery({
     queryKey: ['portfolio'],
     queryFn: async () => {
+      if (!USE_MOCK) {
+        const data = await portfolioApi.get()
+        return { ...data, achievements: portfolioData.achievements }
+      }
       await delay(300)
       return portfolioData
     },
