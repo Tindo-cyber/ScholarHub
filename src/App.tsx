@@ -40,7 +40,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}>
           <Routes>
             <Route element={<GuestRoute />}>
               <Route path="/auth/login" element={<Lazy><LoginPage /></Lazy>} />

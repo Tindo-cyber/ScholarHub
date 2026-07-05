@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Vercel (not used)
+.vercel
+
 # Environment (never commit secrets)
 .env
 .env.local

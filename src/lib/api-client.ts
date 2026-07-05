@@ -23,8 +23,9 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem('scholarhub_token')
       localStorage.removeItem('scholarhub_refresh')
-      if (!window.location.pathname.startsWith('/auth')) {
-        window.location.href = '/auth/login'
+      if (!window.location.pathname.includes('/auth')) {
+        const base = import.meta.env.BASE_URL
+        window.location.href = `${base}auth/login`.replace(/\/{2,}/g, '/')
       }
     }
     return Promise.reject(error)

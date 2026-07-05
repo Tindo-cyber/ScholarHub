@@ -117,6 +117,38 @@ Set `VITE_USE_MOCK=false` in `.env` to connect frontend to the live API.
 - Startup Mentor
 - University Admin
 
+## Deploy on GitHub Pages
+
+The frontend auto-deploys to GitHub Pages on every push to `main`.
+
+**Live URL:** [https://tindo-cyber.github.io/ScholarHub/](https://tindo-cyber.github.io/ScholarHub/)
+
+### One-time setup
+
+1. Open your repo on GitHub → **Settings** → **Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` — the workflow in `.github/workflows/deploy.yml` handles the rest
+
+### Demo login (mock mode)
+
+- **Email:** `alex.morgan@university.edu`
+- **Password:** `ScholarHub2026!`
+
+### Custom domain (optional)
+
+Add a `CNAME` file in `public/` or configure a custom domain in GitHub Pages settings. Set `VITE_BASE_PATH=/` in the workflow when using a root domain.
+
+### Connecting a live API
+
+Edit `.github/workflows/deploy.yml` build env:
+
+```yaml
+VITE_USE_MOCK: false
+VITE_API_URL: https://your-api.example.com/api/v1
+```
+
+Add your Pages URL to backend `CORS_ALLOWED_ORIGINS`.
+
 ## Environment Variables
 
 ```env
