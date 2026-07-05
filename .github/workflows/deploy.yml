@@ -33,10 +33,11 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_PATH: /ScholarHub/
+          VITE_BASE_PATH: /
           VITE_USE_MOCK: true
           VITE_APP_NAME: ScholarHub
           VITE_APP_TAGLINE: Build. Innovate. Launch.
+          VITE_APP_URL: https://www.scholarhub.com
 
       - name: SPA fallback for GitHub Pages
         run: cp dist/index.html dist/404.html

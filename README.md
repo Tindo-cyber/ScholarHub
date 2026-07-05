@@ -119,35 +119,48 @@ Set `VITE_USE_MOCK=false` in `.env` to connect frontend to the live API.
 
 ## Deploy on GitHub Pages
 
-The frontend auto-deploys to GitHub Pages on every push to `main`.
+The frontend auto-deploys on every push to `main`.
 
-**Live URL:** [https://tindo-cyber.github.io/ScholarHub/](https://tindo-cyber.github.io/ScholarHub/)
+**Production URL:** [https://www.scholarhub.com](https://www.scholarhub.com)
 
-### One-time setup
+### GitHub setup
 
-1. Open your repo on GitHub → **Settings** → **Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
-3. Push to `main` — the workflow in `.github/workflows/deploy.yml` handles the rest
+1. Repo → **Settings** → **Pages** → **Source:** GitHub Actions
+2. **Custom domain:** `www.scholarhub.com` (matches `public/CNAME`)
+3. Enable **Enforce HTTPS** once DNS is verified
+
+### DNS configuration (at your domain registrar)
+
+| Type | Name | Value |
+|------|------|-------|
+| **CNAME** | `www` | `tindo-cyber.github.io` |
+
+**Apex domain** (`scholarhub.com` → `www`):
+
+| Type | Name | Value |
+|------|------|-------|
+| **A** | `@` | `185.199.108.153` |
+| **A** | `@` | `185.199.109.153` |
+| **A** | `@` | `185.199.110.153` |
+| **A** | `@` | `185.199.111.153` |
+
+Then set a redirect at your registrar: `scholarhub.com` → `https://www.scholarhub.com`
 
 ### Demo login (mock mode)
 
 - **Email:** `alex.morgan@university.edu`
 - **Password:** `ScholarHub2026!`
 
-### Custom domain (optional)
-
-Add a `CNAME` file in `public/` or configure a custom domain in GitHub Pages settings. Set `VITE_BASE_PATH=/` in the workflow when using a root domain.
-
 ### Connecting a live API
 
-Edit `.github/workflows/deploy.yml` build env:
+Edit `.github/workflows/deploy.yml`:
 
 ```yaml
 VITE_USE_MOCK: false
-VITE_API_URL: https://your-api.example.com/api/v1
+VITE_API_URL: https://api.scholarhub.com/api/v1
 ```
 
-Add your Pages URL to backend `CORS_ALLOWED_ORIGINS`.
+Set backend `CORS_ALLOWED_ORIGINS` to include `https://www.scholarhub.com`.
 
 ## Environment Variables
 
