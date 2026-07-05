@@ -25,7 +25,7 @@ export const useThemeStore = create<ThemeState>()(
       },
     }),
     {
-      name: 'scholarhub-theme',
+      name: 'innovatex-theme',
       onRehydrateStorage: () => (state) => {
         if (state?.theme === 'dark') {
           document.documentElement.classList.add('dark')

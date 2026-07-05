@@ -23,8 +23,8 @@ interface AuthState {
 }
 
 function setTokens(auth: AuthResponse) {
-  localStorage.setItem('scholarhub_token', auth.accessToken)
-  localStorage.setItem('scholarhub_refresh', auth.refreshToken)
+  localStorage.setItem('innovatex_token', auth.accessToken)
+  localStorage.setItem('innovatex_refresh', auth.refreshToken)
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -112,13 +112,13 @@ export const useAuthStore = create<AuthState>()(
       },
 
       logout: () => {
-        localStorage.removeItem('scholarhub_token')
-        localStorage.removeItem('scholarhub_refresh')
+        localStorage.removeItem('innovatex_token')
+        localStorage.removeItem('innovatex_refresh')
         set({ user: null, token: null, isAuthenticated: false })
       },
 
       fetchUser: async () => {
-        const token = localStorage.getItem('scholarhub_token')
+        const token = localStorage.getItem('innovatex_token')
         if (!token) return
         try {
           const user = await authApi.me()
@@ -134,7 +134,7 @@ export const useAuthStore = create<AuthState>()(
       },
     }),
     {
-      name: 'scholarhub-auth',
+      name: 'innovatex-auth',
       partialize: (state) => ({
         token: state.token,
         isAuthenticated: state.isAuthenticated,

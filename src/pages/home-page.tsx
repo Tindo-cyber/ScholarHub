@@ -162,7 +162,7 @@ export default function HomePage() {
         <QuickActions />
       </section>
 
-      <section aria-label="Scholar AI">
+      <section aria-label="InnovateX AI">
         <AICommandBar />
       </section>
     </div>

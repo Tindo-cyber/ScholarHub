@@ -38,7 +38,7 @@ export default function LoginPage() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
             <GraduationCap className="h-6 w-6" />
           </div>
-          <span className="text-xl font-semibold">ScholarHub</span>
+          <span className="text-xl font-semibold">InnovateX</span>
         </div>
         <div>
           <h1 className="text-5xl font-bold leading-tight tracking-tight">
@@ -48,7 +48,7 @@ export default function LoginPage() {
             The AI-powered innovation ecosystem that supports students from idea to startup.
           </p>
         </div>
-        <p className="text-sm text-emerald-200">© 2026 ScholarHub. All rights reserved.</p>
+        <p className="text-sm text-emerald-200">© 2026 InnovateX. All rights reserved.</p>
       </div>
 
       <div className="flex flex-1 items-center justify-center p-8">
@@ -60,7 +60,7 @@ export default function LoginPage() {
           <div className="mb-8 lg:hidden">
             <div className="flex items-center gap-2">
               <GraduationCap className="h-6 w-6 text-emerald-600" />
-              <span className="text-lg font-semibold">ScholarHub</span>
+              <span className="text-lg font-semibold">InnovateX</span>
             </div>
           </div>
 

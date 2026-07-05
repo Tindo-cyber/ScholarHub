@@ -125,7 +125,7 @@ export default function AIWorkspacePage() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-950/50">
                   <Sparkles className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h2 className="mt-6 text-2xl font-bold tracking-tight">Scholar AI</h2>
+                <h2 className="mt-6 text-2xl font-bold tracking-tight">InnovateX AI</h2>
                 <p className="mt-2 max-w-md text-muted-foreground">
                   Your intelligent academic assistant for code, documentation, and project guidance.
                 </p>
@@ -201,7 +201,7 @@ export default function AIWorkspacePage() {
                       handleSend()
                     }
                   }}
-                  placeholder="Message Scholar AI..."
+                  placeholder="Message InnovateX AI..."
                   rows={1}
                   aria-label="Message input"
                   className="max-h-32 min-h-[44px] flex-1 resize-none bg-transparent px-2 py-3 text-sm focus:outline-none"
@@ -219,7 +219,7 @@ export default function AIWorkspacePage() {
               </div>
             </div>
             <p className="mt-2 text-center text-xs text-muted-foreground">
-              Scholar AI can make mistakes. Verify important academic information.
+              InnovateX AI can make mistakes. Verify important academic information.
             </p>
           </div>
         </div>

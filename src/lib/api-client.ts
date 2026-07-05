@@ -10,7 +10,7 @@ export const api = axios.create({
 })
 
 api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  const token = localStorage.getItem('scholarhub_token')
+  const token = localStorage.getItem('innovatex_token')
   if (token && config.headers) {
     config.headers.Authorization = `Bearer ${token}`
   }
@@ -21,8 +21,8 @@ api.interceptors.response.use(
   (response) => response,
   (error: AxiosError<ApiResponse<unknown>>) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('scholarhub_token')
-      localStorage.removeItem('scholarhub_refresh')
+      localStorage.removeItem('innovatex_token')
+      localStorage.removeItem('innovatex_refresh')
       if (!window.location.pathname.includes('/auth')) {
         const base = import.meta.env.BASE_URL
         window.location.href = `${base}auth/login`.replace(/\/{2,}/g, '/')

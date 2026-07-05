@@ -26,7 +26,7 @@ export default function StartupPage() {
             Continue as Startup
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Transform your graduation project into a real startup. ScholarHub provides everything you need to launch.
+            Transform your graduation project into a real startup. InnovateX provides everything you need to launch.
           </p>
         </header>
       </FadeIn>

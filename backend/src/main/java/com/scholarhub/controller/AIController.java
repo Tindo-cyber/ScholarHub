@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/ai")
 @RequiredArgsConstructor
-@Tag(name = "Scholar AI Mentor")
+@Tag(name = "InnovateX AI Mentor")
 public class AIController {
 
     private final AIService aiService;
 
     @PostMapping("/chat")
-    @Operation(summary = "Chat with Scholar AI mentor")
+    @Operation(summary = "Chat with InnovateX AI mentor")
     public ApiResponse<AIChatResponse> chat(
             @Valid @RequestBody AIChatRequest request,
             @AuthenticationPrincipal UserDetails userDetails

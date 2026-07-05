@@ -14,7 +14,7 @@ const settingsSections = [
     items: [
       { label: 'Supervisor feedback', description: 'Get notified when supervisors comment', default: true },
       { label: 'Deployment updates', description: 'Build and deployment status changes', default: true },
-      { label: 'AI insights', description: 'When Scholar AI completes an analysis', default: true },
+      { label: 'AI insights', description: 'When InnovateX AI completes an analysis', default: true },
       { label: 'Deadline reminders', description: 'Upcoming submission deadlines', default: true },
     ],
   },

@@ -16,10 +16,10 @@ public class OpenApiConfig {
     public OpenAPI scholarHubOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("ScholarHub API")
+                        .title("InnovateX API")
                         .description("AI-powered Digital Innovation Ecosystem for Universities")
                         .version("1.0.0")
-                        .contact(new Contact().name("ScholarHub").email("support@scholarhub.io")))
+                        .contact(new Contact().name("InnovateX").email("support@innovatex.io")))
                 .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
                 .components(new Components()
                         .addSecuritySchemes("Bearer Authentication",

@@ -22,7 +22,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navItems = [
   { to: '/', label: 'Workspace', icon: LayoutDashboard },
   { to: '/projects', label: 'Projects', icon: FolderKanban },
-  { to: '/ai', label: 'AI Mentor', icon: Sparkles },
+  { to: '/ai', label: 'InnovateX AI', icon: Sparkles },
   { to: '/portfolio', label: 'Portfolio', icon: Briefcase },
   { to: '/marketplace', label: 'Marketplace', icon: Store },
   { to: '/startup', label: 'Startup', icon: Rocket },
@@ -68,7 +68,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           <GraduationCap className="h-5 w-5" aria-hidden="true" />
         </div>
         <div>
-          <p className="text-sm font-semibold tracking-tight">ScholarHub</p>
+          <p className="text-sm font-semibold tracking-tight">InnovateX</p>
           <p className="text-[10px] text-muted-foreground">Build · Innovate · Launch</p>
         </div>
       </div>

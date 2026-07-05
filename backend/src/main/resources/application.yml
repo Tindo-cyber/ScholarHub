@@ -1,6 +1,6 @@
 spring:
   application:
-    name: scholarhub-api
+    name: innovatex-api
   profiles:
     active: dev
   jpa:

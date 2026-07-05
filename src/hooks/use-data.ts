@@ -194,7 +194,7 @@ export function useAIChat() {
       await delay(800)
       return {
         conversationId: request.conversationId ?? crypto.randomUUID(),
-        reply: "I'm Scholar AI, your academic mentor. I can help with documentation, code review, viva preparation, and more. What would you like to work on?",
+        reply: "I'm InnovateX AI, your academic mentor. I can help with documentation, code review, viva preparation, and more. What would you like to work on?",
         title: request.message.slice(0, 50),
       }
     },

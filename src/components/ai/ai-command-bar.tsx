@@ -56,8 +56,8 @@ export function AICommandBar({ variant = 'home', className }: AICommandBarProps)
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Ask Scholar AI anything..."
-              aria-label="Ask Scholar AI"
+              placeholder="Ask InnovateX AI anything..."
+              aria-label="Ask InnovateX AI"
               className="flex-1 bg-transparent text-base placeholder:text-muted-foreground focus:outline-none"
             />
             <div className="flex items-center gap-2">

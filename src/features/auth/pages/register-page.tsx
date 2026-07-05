@@ -36,7 +36,7 @@ export default function RegisterPage() {
       <div className="hidden flex-1 flex-col justify-between bg-gradient-to-br from-emerald-600 to-emerald-800 p-12 text-white lg:flex">
         <div className="flex items-center gap-3">
           <GraduationCap className="h-10 w-10" />
-          <span className="text-xl font-semibold">ScholarHub</span>
+          <span className="text-xl font-semibold">InnovateX</span>
         </div>
         <div>
           <h1 className="text-4xl font-bold leading-tight">Start your innovation journey</h1>
@@ -49,7 +49,7 @@ export default function RegisterPage() {
       <div className="flex flex-1 items-center justify-center p-8">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
           <h2 className="text-2xl font-bold tracking-tight">Create account</h2>
-          <p className="mt-2 text-muted-foreground">Join ScholarHub as a student innovator</p>
+          <p className="mt-2 text-muted-foreground">Join InnovateX as a student innovator</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-4">
             <div className="grid grid-cols-2 gap-4">

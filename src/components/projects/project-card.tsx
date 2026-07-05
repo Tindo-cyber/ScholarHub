@@ -69,7 +69,7 @@ import { Upload, Sparkles, Rocket as RocketIcon, MessageSquare } from 'lucide-re
 
 const quickActions = [
   { label: 'Upload Project', icon: Upload, href: '/projects?action=upload', primary: true },
-  { label: 'Ask Scholar AI', icon: Sparkles, href: '/ai' },
+  { label: 'Ask InnovateX AI', icon: Sparkles, href: '/ai' },
   { label: 'Deploy Project', icon: RocketIcon, href: '/projects?action=deploy' },
   { label: 'View Feedback', icon: MessageSquare, href: '/notifications?filter=supervisor' },
 ]

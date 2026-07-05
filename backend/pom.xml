@@ -14,7 +14,7 @@
     <groupId>com.scholarhub</groupId>
     <artifactId>scholarhub-api</artifactId>
     <version>1.0.0</version>
-    <name>ScholarHub API</name>
+    <name>InnovateX API</name>
     <description>AI-powered Digital Innovation Ecosystem for Universities</description>
 
     <properties>

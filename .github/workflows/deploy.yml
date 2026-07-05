@@ -35,7 +35,7 @@ jobs:
         env:
           VITE_BASE_PATH: /
           VITE_USE_MOCK: true
-          VITE_APP_NAME: ScholarHub
+          VITE_APP_NAME: InnovateX
           VITE_APP_TAGLINE: Build. Innovate. Launch.
           VITE_APP_URL: https://www.scholarhub.com
 

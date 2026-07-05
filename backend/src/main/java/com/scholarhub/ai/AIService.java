@@ -76,7 +76,7 @@ public class AIService {
                     + "5. What would you improve given more time?\n\n"
                     + "Want me to generate project-specific questions?";
         }
-        return "I'm Scholar AI, your academic mentor. I can help with:\n\n"
+        return "I'm InnovateX AI, your academic mentor. I can help with:\n\n"
                 + "• Generating chapters and proposals\n• Code review and explanation\n"
                 + "• Documentation improvement\n• ERD/UML suggestions\n• Viva preparation\n"
                 + "• Presentation outlines\n\nWhat would you like to work on?";
