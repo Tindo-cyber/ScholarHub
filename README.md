@@ -92,9 +92,9 @@ Set `VITE_USE_MOCK=false` in `.env` to connect frontend to the live API.
 
 ## Deploy on GitHub Pages
 
-**Production URL:** [https://www.scholarzim.com](https://www.scholarzim.com)
+**Production URL:** [https://www.innovatex.com](https://www.innovatex.com)
 
-The frontend auto-deploys on every push to `main`. Custom domain `www.scholarzim.com` is configured via `public/CNAME`.
+The frontend auto-deploys on every push to `main`. Custom domain `www.innovatex.com` is configured via `public/CNAME`.
 
 ### Demo login (mock mode)
 
@@ -108,7 +108,7 @@ VITE_API_URL=http://localhost:8080/api/v1
 VITE_USE_MOCK=true
 VITE_APP_NAME=InnovateX
 VITE_APP_TAGLINE=Build. Innovate. Launch.
-VITE_APP_URL=https://www.scholarzim.com
+VITE_APP_URL=https://www.innovatex.com
 ```
 
 ## License
